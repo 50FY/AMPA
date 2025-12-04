@@ -1,7 +1,7 @@
 import sys
 import math
 import matplotlib.pyplot as plt
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 
 def calculate_airmass(hour_angle_rad, declination_rad, latitude_rad):
     cos_z = (math.sin(declination_rad) * math.sin(latitude_rad)) + (math.cos(declination_rad) * math.cos(latitude_rad) * math.cos(hour_angle_rad))
@@ -128,6 +128,8 @@ class MainWindow(QtWidgets.QWidget):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon("AirMass_Icon.png"))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
