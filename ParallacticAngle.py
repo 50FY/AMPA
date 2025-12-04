@@ -1,7 +1,7 @@
 import sys
 import math
 import matplotlib.pyplot as plt
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 
 def calculate_parallactic_angle(hour_angle, declination, latitude):
     try:
@@ -134,6 +134,8 @@ class MainWindow(QtWidgets.QWidget):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon("ParallacticAngle_Icon.png"))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
